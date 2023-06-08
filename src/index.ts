@@ -4,9 +4,8 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import Logger from "./middleware/logger.js";
-import { LoadDistrictData } from "./controller/LoadDistrictData.js";
-import { LoadDeviceData } from "./controller/LoadDeviceData.js";
 import ArduinoRequest from "./controller/ArduinoRequest.js";
+import DownloadWarningOutput from "./script/DownloadOutput.js";
 
 // Load environment variables from .env file
 dotenvConfig();
@@ -24,8 +23,7 @@ app.use(bodyParser.json());
   try {
     await mongoose.connect(process.env.MONGO_URI!);
     console.log("MongoDB connected");
-    // LoadDistrictData();
-    // LoadDeviceData();
+    // DownloadWarningOutput();
   } catch (error) {
     throw error;
   }

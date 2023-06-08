@@ -9,7 +9,7 @@ const IotDeviceSchema = new mongoose.Schema({
   districtId: { type: Number, required: true },
   latitude: { type: Number, required: true },
   longitude: { type: Number, required: true },
-  lastFetch: { type: Number, required: true },
+  lastFetch: { type: Date, required: true },
 });
 
 const IotDevice = mongoose.model("IotDevice", IotDeviceSchema);
