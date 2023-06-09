@@ -132,4 +132,4 @@ out
 .pnp.*
 
 # Miscellaneous
-# src/data/DistrictOutput.json
+# src/data/DistrictOutput.js
