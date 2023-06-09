@@ -19,9 +19,10 @@ export default async function DownloadWarningOutput(): Promise<void> {
     const selectedString = match ? match[1] : "";
 
     // Create a new JSON file with the extracted string
-    const jsonContent = `const data = [${selectedString}]; export default data`;
+    const jsonContent = `const data = [${selectedString}]; export default data;`;
 
     await fs.writeFile("./src/data/DistrictOutput.js", jsonContent);
+    await fs.writeFile("./dist/data/DistrictOutput.js", jsonContent);
 
     console.log("JSON file created successfully.");
   } catch (error) {
