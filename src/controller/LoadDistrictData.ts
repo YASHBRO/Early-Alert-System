@@ -1,5 +1,5 @@
 import District from "../model/District.js";
-import districtDataJson from "../data/DistrictOutput.json";
+import districtDataJson from "../data/DistrictOutput.js";
 
 function LoadDistrictData() {
   const districtData: {

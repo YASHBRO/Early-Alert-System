@@ -5,7 +5,7 @@ import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import Logger from "./middleware/logger.js";
 import ArduinoRequest from "./controller/ArduinoRequest.js";
-import DownloadWarningOutput from "./script/DownloadOutput.js";
+import ImdSchedular from "./util/ImdSchedular.js";
 
 // Load environment variables from .env file
 dotenvConfig();
@@ -28,6 +28,9 @@ app.use(bodyParser.json());
     throw error;
   }
 })();
+
+// Initiating Job Schedular
+ImdSchedular();
 
 // Use custom logger middleware
 app.use(Logger);
