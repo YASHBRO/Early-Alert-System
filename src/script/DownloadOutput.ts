@@ -19,7 +19,7 @@ export default async function DownloadWarningOutput(): Promise<void> {
     const selectedString = match ? match[1] : "";
 
     // Create a new JSON file with the extracted string
-    const jsonContent = `export default [${selectedString}]`;
+    const jsonContent = `const data = [${selectedString}]; export default data`;
 
     await fs.writeFile("./src/data/DistrictOutput.js", jsonContent);
 

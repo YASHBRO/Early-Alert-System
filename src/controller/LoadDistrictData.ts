@@ -1,7 +1,7 @@
 import District from "../model/District.js";
 import districtDataJson from "../data/DistrictOutput.js";
 
-function LoadDistrictData() {
+async function LoadDistrictData() {
   const districtData: {
     title: string;
     id: string;
@@ -17,9 +17,10 @@ function LoadDistrictData() {
     districtId: parseInt(item.id),
     warning: { color: item.color, innerText: item.balloonText },
   }));
+  await District.deleteMany().exec();
   District.insertMany(newData)
     .then((res) => {
-      console.log(res);
+      console.log("successfully inserted");
     })
     .catch((err) => {
       console.log(err);
