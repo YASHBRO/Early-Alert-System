@@ -6,9 +6,9 @@ export default function ImdSchedular() {
   cron.schedule("*/1 * * * *", async () => {
     console.log("Starting sync");
 
-    await DownloadWarningOutput();
+    const outputString: string = await DownloadWarningOutput();
 
-    LoadDistrictData();
+    LoadDistrictData(outputString);
     const date = new Date();
     console.log("Synced with IMD website at :", date.toLocaleString());
   });

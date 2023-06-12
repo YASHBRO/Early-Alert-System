@@ -1,13 +1,12 @@
 import District from "../model/District.js";
-import districtDataJson from "../data/DistrictOutput.js";
 
-async function LoadDistrictData() {
+async function LoadDistrictData(districtDataString: string) {
   const districtData: {
     title: string;
     id: string;
     color: string;
     balloonText: string;
-  }[] = districtDataJson;
+  }[] = JSON.parse(districtDataString);
 
   if (districtData.length < 1) {
     return;
